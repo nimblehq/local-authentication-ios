@@ -1,0 +1,12 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Test project"
+  lane :tests do
+    scan(
+      workspace: "Example.xcworkspace",
+      scheme: "Example",
+      device: "iPhone 11"
+    )
+  end
+end
