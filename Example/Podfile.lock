@@ -1,27 +1,16 @@
 PODS:
-  - Nimble (8.0.9)
   - NimbleLocalAuthentication (0.1.0)
-  - Quick (2.2.1)
 
 DEPENDENCIES:
-  - Nimble (~> 8.0.7)
   - NimbleLocalAuthentication (from `../`)
-  - Quick (~> 2.2.0)
-
-SPEC REPOS:
-  trunk:
-    - Nimble
-    - Quick
 
 EXTERNAL SOURCES:
   NimbleLocalAuthentication:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Nimble: 98b888285a615fd34f20e61753cf58ea1402bde4
-  NimbleLocalAuthentication: c6cb48a054a13b732d4653bcfa33a854e74bb96f
-  Quick: f5754d69b7013f5864c29aab9ae6f0c79c5bc200
+  NimbleLocalAuthentication: 5b456eeec7831c01a5b6ee18745516d086c60c5e
 
-PODFILE CHECKSUM: 6beea87373016e8b31029d7ca5ea3cfa695dfe52
+PODFILE CHECKSUM: 29661ccb6961d9fa84a230256913b88059c98450
 
 COCOAPODS: 1.9.3
