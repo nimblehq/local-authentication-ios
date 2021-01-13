@@ -1,0 +1,16 @@
+PODS:
+  - NimbleLocalAuthentication (0.1.0)
+
+DEPENDENCIES:
+  - NimbleLocalAuthentication (from `../`)
+
+EXTERNAL SOURCES:
+  NimbleLocalAuthentication:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  NimbleLocalAuthentication: 5b456eeec7831c01a5b6ee18745516d086c60c5e
+
+PODFILE CHECKSUM: 29661ccb6961d9fa84a230256913b88059c98450
+
+COCOAPODS: 1.9.3
