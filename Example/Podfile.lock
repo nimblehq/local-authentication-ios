@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  NimbleLocalAuthentication: 5b456eeec7831c01a5b6ee18745516d086c60c5e
+  NimbleLocalAuthentication: 9797b9e2d67aab08cc857c7f0e9a8b6440c40a15
 
 PODFILE CHECKSUM: 29661ccb6961d9fa84a230256913b88059c98450
 

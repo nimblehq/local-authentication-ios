@@ -9,34 +9,12 @@
 Pod::Spec.new do |s|
   s.name             = 'NimbleLocalAuthentication'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of NimbleLocalAuthentication.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
-  s.homepage         = 'https://github.com/19943832/NimbleLocalAuthentication'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.summary          = 'A SDK support local authentication.'
+  s.homepage         = 'https://github.com/nimblehq/local-authentication-ios'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { '19943832' => 'su@nimblehq.co' }
-  s.source           = { :git => 'https://github.com/19943832/NimbleLocalAuthentication.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-  s.ios.deployment_target = '9.0'
-
+  s.author           = { '@nimblehq' => 'su.v@nimblehq.co' }
+  s.source           = { :git => 'https://github.com/nimblehq/local-authentication-ios.git', :tag => s.version.to_s }
+  s.ios.deployment_target = '11.0'
   s.source_files = 'Sources/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'NimbleLocalAuthentication' => ['NimbleLocalAuthentication/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+   s.frameworks = 'LocalAuthentication'
 end
