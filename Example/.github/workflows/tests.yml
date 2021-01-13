@@ -1,0 +1,27 @@
+name: Tests
+
+on:
+  push:
+    branches: 
+      - main
+      - develop
+  pull_request:
+
+jobs:
+  build:
+    runs-on: macOS-latest
+    steps:
+    - name: Set up Git repository
+      uses: actions/checkout@v1
+    - name: Set up Ruby
+      uses: actions/setup-ruby@v1
+    - name: Install RubyGems
+      run: gem install bundler
+    - name: Bundle install
+      run: bundle install --jobs 4 --retry 3
+    - name: Install Cocoapods
+      run: bundle exec pod install --repo-update
+    - name: Test
+      env: 
+        CI: true
+      run: bundle exec fastlane tests
