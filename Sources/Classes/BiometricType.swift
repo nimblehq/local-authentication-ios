@@ -7,4 +7,4 @@
 
 import LocalAuthentication
 
-typealias BiometricType = LABiometryType
+typealias BiometryType = LABiometryType
