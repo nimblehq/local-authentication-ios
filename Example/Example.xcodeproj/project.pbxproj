@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9000626B25B03C8800881EB6 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000626A25B03C8800881EB6 /* TextField.swift */; };
 		902F635D25AEE284005CA468 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 902F635C25AEE284005CA468 /* README.md */; };
 		902F637825AEE855005CA468 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902F637725AEE855005CA468 /* ExampleTests.swift */; };
 		90CB953825AEB5780075DB4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CB953725AEB5780075DB4A /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		21A98E88180E94304090C7FD /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		9000626A25B03C8800881EB6 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		902F635C25AEE284005CA468 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		902F637525AEE855005CA468 /* ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		902F637725AEE855005CA468 /* ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		902F636425AEE310005CA468 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9000626A25B03C8800881EB6 /* TextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				90CB953C25AEB5780075DB4A /* LoginViewController.swift in Sources */,
 				90CB953825AEB5780075DB4A /* AppDelegate.swift in Sources */,
 				90CB953A25AEB5780075DB4A /* SceneDelegate.swift in Sources */,
+				9000626B25B03C8800881EB6 /* TextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
