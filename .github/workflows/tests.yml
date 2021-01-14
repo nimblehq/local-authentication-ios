@@ -17,11 +17,15 @@ jobs:
       uses: actions/setup-ruby@v1
     - name: Install RubyGems
       run: gem install bundler
+      working-directory: ./Example
     - name: Bundle install
       run: bundle install --jobs 4 --retry 3
+      working-directory: ./Example
     - name: Install Cocoapods
       run: bundle exec pod install --repo-update
+      working-directory: ./Example
     - name: Test
       env: 
         CI: true
       run: bundle exec fastlane tests
+      working-directory: ./Example
