@@ -111,7 +111,8 @@ extension LoginViewController {
     loginButton.layer.cornerRadius = 12.0
     loginButton.clipsToBounds = true
 
-    biometricButton.setImage(UIImage(named: "ic-face-id")?.withRenderingMode(.alwaysTemplate), for: .normal)
+    let biometricImage = UIImage(named: "ic-face-id")?.withRenderingMode(.alwaysTemplate)
+    biometricButton.setImage(biometricImage, for: .normal)
     biometricButton.tintColor = .white
   }
 }
