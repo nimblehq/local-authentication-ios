@@ -10,6 +10,8 @@
 		9000626B25B03C8800881EB6 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000626A25B03C8800881EB6 /* TextField.swift */; };
 		902F635D25AEE284005CA468 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 902F635C25AEE284005CA468 /* README.md */; };
 		902F637825AEE855005CA468 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902F637725AEE855005CA468 /* ExampleTests.swift */; };
+		90353B6425B1A37600F7BA89 /* LoginModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90353B6325B1A37600F7BA89 /* LoginModule.swift */; };
+		90353B6825B1A38000F7BA89 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90353B6725B1A38000F7BA89 /* LoginViewModel.swift */; };
 		90CB953825AEB5780075DB4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CB953725AEB5780075DB4A /* AppDelegate.swift */; };
 		90CB953A25AEB5780075DB4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CB953925AEB5780075DB4A /* SceneDelegate.swift */; };
 		90CB953C25AEB5780075DB4A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CB953B25AEB5780075DB4A /* LoginViewController.swift */; };
@@ -35,6 +37,8 @@
 		902F637525AEE855005CA468 /* ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		902F637725AEE855005CA468 /* ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
 		902F637925AEE855005CA468 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90353B6325B1A37600F7BA89 /* LoginModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModule.swift; sourceTree = "<group>"; };
+		90353B6725B1A38000F7BA89 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		90CB953425AEB5780075DB4A /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90CB953725AEB5780075DB4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90CB953925AEB5780075DB4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 		902F636325AEE30A005CA468 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				90353B7025B2061400F7BA89 /* Home */,
 				902F636525AEE31C005CA468 /* Login */,
 			);
 			path = Modules;
@@ -147,7 +152,9 @@
 		902F636525AEE31C005CA468 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				90353B6325B1A37600F7BA89 /* LoginModule.swift */,
 				90CB953B25AEB5780075DB4A /* LoginViewController.swift */,
+				90353B6725B1A38000F7BA89 /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -167,6 +174,13 @@
 				902F637925AEE855005CA468 /* Info.plist */,
 			);
 			path = ExampleTests;
+			sourceTree = "<group>";
+		};
+		90353B7025B2061400F7BA89 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		90CB952B25AEB5780075DB4A = {
@@ -352,7 +366,9 @@
 			files = (
 				90CB953C25AEB5780075DB4A /* LoginViewController.swift in Sources */,
 				90CB953825AEB5780075DB4A /* AppDelegate.swift in Sources */,
+				90353B6825B1A38000F7BA89 /* LoginViewModel.swift in Sources */,
 				90CB953A25AEB5780075DB4A /* SceneDelegate.swift in Sources */,
+				90353B6425B1A37600F7BA89 /* LoginModule.swift in Sources */,
 				9000626B25B03C8800881EB6 /* TextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
