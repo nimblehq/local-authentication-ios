@@ -14,10 +14,7 @@ public final class NimbleLocalAuthenticatior {
 
   public init(context: LAContext = LAContext()) {
     self.context = context
-    context.canEvaluatePolicy(policy, error: .none)
   }
-
-  deinit { context.invalidate() }
 }
 
 // MARK: - BiometryService
@@ -73,8 +70,14 @@ extension NimbleLocalAuthenticatior: BiometryService {
       policy,
       localizedReason: "Unlock the app with biometry authentication"
     ) { [weak self] (isSuccess, error) in
-      self?.handleEvaluation(isSuccess: isSuccess, error: error, completion: completion)
+      DispatchQueue.main.async {
+        self?.handleEvaluation(isSuccess: isSuccess, error: error, completion: completion)
+      }
     }
+  }
+
+  public func invalidate() {
+    context.invalidate()
   }
 
   public func setCredential(_ credential: Data?, type: CredentialType) -> Bool {

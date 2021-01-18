@@ -10,6 +10,7 @@ import UIKit
 protocol LoginViewInput: AnyObject {
 
   func configure()
+  func showMessage(_ message: String)
 }
 
 protocol LoginViewOuput: AnyObject {
@@ -48,6 +49,12 @@ extension LoginViewController: LoginViewInput {
   func configure() {
     setUpLayouts()
     setUpViews()
+  }
+
+  func showMessage(_ message: String) {
+    let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+    present(alert, animated: true, completion: nil)
   }
 
   private func setUpLayouts() {

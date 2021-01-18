@@ -12,9 +12,15 @@ final class LoginViewModel {
   weak var view: LoginViewInput?
   weak var output: LoginOutput?
 
+  private let router: LoginRouter
+
   private let biometryService: BiometryService
 
-  init(biometryService: BiometryService = NimbleLocalAuthenticatior()) {
+  init(
+    router: LoginRouter,
+    biometryService: BiometryService = NimbleLocalAuthenticatior()
+  ) {
+    self.router = router
     self.biometryService = biometryService
   }
 }
@@ -34,9 +40,9 @@ extension LoginViewModel: LoginViewOuput {
     case .touchID:
       return "ic-touch-id"
     case .none:
-      return ""
+      return "ic-pass"
     @unknown default:
-      return ""
+      return "ic-pass"
     }
   }
 
@@ -45,12 +51,12 @@ extension LoginViewModel: LoginViewOuput {
   }
 
   func selectBiometric() {
-    biometryService.authenticate { result in
+    biometryService.authenticate { [weak self] result in
       switch result {
       case .success:
-        print("Success")
-      case .failure:
-        print("Failure")
+        self?.router.showHome()
+      case .failure(let error):
+        self?.view?.showMessage(error.localizedDescription)
       }
     }
   }

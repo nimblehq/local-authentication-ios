@@ -17,6 +17,7 @@ public protocol BiometryService {
   var interactionNotAllowed: Bool { get set }
 
   func authenticate(completion: @escaping (BiometryResult) -> Void)
+  func invalidate()
   func setCredential(_ credential: Data?, type: CredentialType) -> Bool
   func isCredentialSet(_ type: CredentialType) -> Bool
 }
