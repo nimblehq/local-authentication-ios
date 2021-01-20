@@ -7,6 +7,21 @@
 
 import UIKit
 
+protocol LoginViewInput: AnyObject {
+
+  func configure()
+  func showMessage(_ message: String)
+}
+
+protocol LoginViewOuput: AnyObject {
+
+  var isBiometricAvailable: Bool { get }
+  var biometricImageName: String { get }
+
+  func viewDidLoad()
+  func selectBiometric()
+}
+
 final class LoginViewController: UIViewController {
 
   private let backgroundImageView = UIImageView()
@@ -19,18 +34,30 @@ final class LoginViewController: UIViewController {
 
   override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
+  var output: LoginViewOuput?
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    setUpLayout()
-    setUpView()
+    output?.viewDidLoad()
   }
 }
 
-// MARK: - Setup
+// MARK: - LoginViewInput
 
-extension LoginViewController {
+extension LoginViewController: LoginViewInput {
 
-  private func setUpLayout() {
+  func configure() {
+    setUpLayouts()
+    setUpViews()
+  }
+
+  func showMessage(_ message: String) {
+    let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+    present(alert, animated: true, completion: nil)
+  }
+
+  private func setUpLayouts() {
     view.addSubview(backgroundImageView)
     view.addSubview(logoImageView)
     view.addSubview(stackView)
@@ -74,17 +101,17 @@ extension LoginViewController {
 
     NSLayoutConstraint.activate([
       emailField.heightAnchor.constraint(equalToConstant: Constant.fieldHeight),
-      emailField.widthAnchor.constraint(equalTo: stackView.widthAnchor, constant: -Constant.padding)
+      emailField.widthAnchor.constraint(equalTo: stackView.widthAnchor, constant: -Constant.padding).priority(.required - 1.0)
     ])
 
     NSLayoutConstraint.activate([
       passField.heightAnchor.constraint(equalToConstant: Constant.fieldHeight),
-      passField.widthAnchor.constraint(equalTo: stackView.widthAnchor, constant: -Constant.padding)
+      passField.widthAnchor.constraint(equalTo: stackView.widthAnchor, constant: -Constant.padding).priority(.required - 1.0)
     ])
 
     NSLayoutConstraint.activate([
       loginButton.heightAnchor.constraint(equalToConstant: Constant.fieldHeight),
-      loginButton.widthAnchor.constraint(equalTo: stackView.widthAnchor, constant: -Constant.padding)
+      loginButton.widthAnchor.constraint(equalTo: stackView.widthAnchor, constant: -Constant.padding).priority(.required - 1.0)
     ])
 
     NSLayoutConstraint.activate([
@@ -93,7 +120,7 @@ extension LoginViewController {
     ])
   }
 
-  private func setUpView() {
+  private func setUpViews() {
     view.backgroundColor = .white
 
     backgroundImageView.image = UIImage(named: "LoginBackground")
@@ -111,9 +138,19 @@ extension LoginViewController {
     loginButton.layer.cornerRadius = 12.0
     loginButton.clipsToBounds = true
 
-    let biometricImage = UIImage(named: "ic-face-id")?.withRenderingMode(.alwaysTemplate)
-    biometricButton.setImage(biometricImage, for: .normal)
-    biometricButton.tintColor = .white
+    if let output = output {
+      let biometricImageName = output.biometricImageName
+      let biometricImage = UIImage(named: biometricImageName)?.withRenderingMode(.alwaysTemplate)
+      biometricButton.setImage(biometricImage, for: .normal)
+      biometricButton.tintColor = .white
+      biometricButton.isHidden = !output.isBiometricAvailable
+    }
+
+    biometricButton.addTarget(self, action: #selector(biometricButtonDidTap), for: .touchUpInside)
+  }
+
+  @objc private func biometricButtonDidTap(_ sender: UIButton) {
+    output?.selectBiometric()
   }
 }
 
@@ -126,5 +163,13 @@ extension LoginViewController {
     static let padding: CGFloat = 24.0
     static let fieldHeight: CGFloat = 56.0
     static let buttonSize: CGSize = .init(width: 44.0, height: 44.0)
+  }
+}
+
+extension NSLayoutConstraint {
+
+  func priority(_ priority: UILayoutPriority) -> NSLayoutConstraint {
+    self.priority = priority
+    return self
   }
 }
