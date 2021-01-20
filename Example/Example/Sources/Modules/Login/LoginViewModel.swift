@@ -52,11 +52,13 @@ extension LoginViewModel: LoginViewOuput {
 
   func selectBiometric() {
     biometryService.authenticate { [weak self] result in
-      switch result {
-      case .success:
-        self?.router.showHome()
-      case .failure(let error):
-        self?.view?.showMessage(error.localizedDescription)
+      DispatchQueue.main.async {
+        switch result {
+        case .success:
+          self?.router.showHome()
+        case .failure(let error):
+          self?.view?.showMessage(error.localizedDescription)
+        }
       }
     }
   }

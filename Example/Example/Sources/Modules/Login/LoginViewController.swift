@@ -138,7 +138,7 @@ extension LoginViewController: LoginViewInput {
     loginButton.layer.cornerRadius = 12.0
     loginButton.clipsToBounds = true
 
-    if let output = self.output {
+    if let output = output {
       let biometricImageName = output.biometricImageName
       let biometricImage = UIImage(named: biometricImageName)?.withRenderingMode(.alwaysTemplate)
       biometricButton.setImage(biometricImage, for: .normal)

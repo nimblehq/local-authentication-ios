@@ -14,6 +14,7 @@ public final class NimbleLocalAuthenticatior {
 
   public init(context: LAContext = LAContext()) {
     self.context = context
+    context.canEvaluatePolicy(policy, error: nil)
   }
 }
 
@@ -70,9 +71,7 @@ extension NimbleLocalAuthenticatior: BiometryService {
       policy,
       localizedReason: "Unlock the app with biometry authentication"
     ) { [weak self] (isSuccess, error) in
-      DispatchQueue.main.async {
-        self?.handleEvaluation(isSuccess: isSuccess, error: error, completion: completion)
-      }
+      self?.handleEvaluation(isSuccess: isSuccess, error: error, completion: completion)
     }
   }
 
