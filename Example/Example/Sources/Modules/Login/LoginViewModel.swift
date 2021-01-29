@@ -10,7 +10,6 @@ import NimbleLocalAuthentication
 final class LoginViewModel {
 
   weak var view: LoginViewInput?
-  weak var output: LoginOutput?
 
   private let router: LoginRouter
 
@@ -48,6 +47,7 @@ extension LoginViewModel: LoginViewOuput {
 
   func viewDidLoad() {
     view?.configure()
+    view?.setBiometricButtonHidden(!biometryService.isEnabled)
   }
 
   func selectBiometric() {
@@ -62,8 +62,8 @@ extension LoginViewModel: LoginViewOuput {
       }
     }
   }
+
+  func logIn() {
+    router.showHome()
+  }
 }
-
-// MARK: - LoginInput
-
-extension LoginViewModel: LoginInput {}

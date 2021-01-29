@@ -1,15 +1,22 @@
 PODS:
-  - NimbleLocalAuthentication (0.1.0)
+  - KeychainAccess (4.2.1)
+  - NimbleLocalAuthentication (0.1.0):
+    - KeychainAccess
 
 DEPENDENCIES:
   - NimbleLocalAuthentication (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - KeychainAccess
 
 EXTERNAL SOURCES:
   NimbleLocalAuthentication:
     :path: "../"
 
 SPEC CHECKSUMS:
-  NimbleLocalAuthentication: 9797b9e2d67aab08cc857c7f0e9a8b6440c40a15
+  KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
+  NimbleLocalAuthentication: 21afd6bb71287f59c45b7007ef13fc9225918609
 
 PODFILE CHECKSUM: 29661ccb6961d9fa84a230256913b88059c98450
 

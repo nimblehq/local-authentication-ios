@@ -7,8 +7,9 @@
 
 import LocalAuthentication
 
-public protocol BiometryService {
+public protocol BiometryService: AnyObject {
 
+  var isEnabled: Bool { get set }
   var isAvailable: Bool { get }
   var supportedType: BiometryType { get }
   var localizedFallbackTitle: String? { get set }

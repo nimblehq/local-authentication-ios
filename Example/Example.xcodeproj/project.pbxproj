@@ -16,6 +16,7 @@
 		90A30FDF25B55C1A00FDF5CC /* HomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A30FDE25B55C1A00FDF5CC /* HomeModule.swift */; };
 		90A30FE325B55C5300FDF5CC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A30FE225B55C5300FDF5CC /* HomeViewController.swift */; };
 		90A30FE725B55CC000FDF5CC /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A30FE625B55CC000FDF5CC /* HomeRouter.swift */; };
+		90BC60F225C3F11200C694A9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BC60F125C3F11200C694A9 /* HomeViewModel.swift */; };
 		90CB953825AEB5780075DB4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CB953725AEB5780075DB4A /* AppDelegate.swift */; };
 		90CB953A25AEB5780075DB4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CB953925AEB5780075DB4A /* SceneDelegate.swift */; };
 		90CB953C25AEB5780075DB4A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CB953B25AEB5780075DB4A /* LoginViewController.swift */; };
@@ -47,6 +48,7 @@
 		90A30FDE25B55C1A00FDF5CC /* HomeModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModule.swift; sourceTree = "<group>"; };
 		90A30FE225B55C5300FDF5CC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		90A30FE625B55CC000FDF5CC /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		90BC60F125C3F11200C694A9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		90CB953425AEB5780075DB4A /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90CB953725AEB5780075DB4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90CB953925AEB5780075DB4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				90A30FDE25B55C1A00FDF5CC /* HomeModule.swift */,
 				90A30FE225B55C5300FDF5CC /* HomeViewController.swift */,
 				90A30FE625B55CC000FDF5CC /* HomeRouter.swift */,
+				90BC60F125C3F11200C694A9 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90CB953C25AEB5780075DB4A /* LoginViewController.swift in Sources */,
+				90BC60F225C3F11200C694A9 /* HomeViewModel.swift in Sources */,
 				90CB953825AEB5780075DB4A /* AppDelegate.swift in Sources */,
 				90A30FDF25B55C1A00FDF5CC /* HomeModule.swift in Sources */,
 				90353B6825B1A38000F7BA89 /* LoginViewModel.swift in Sources */,
