@@ -1,6 +1,6 @@
 PODS:
   - KeychainAccess (4.2.1)
-  - NimbleLocalAuthentication (0.1.0):
+  - NimbleLocalAuthentication (1.0.0):
     - KeychainAccess
 
 DEPENDENCIES:
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
-  NimbleLocalAuthentication: 21afd6bb71287f59c45b7007ef13fc9225918609
+  NimbleLocalAuthentication: e311733db211da0d7980731db6303be7b74617ec
 
 PODFILE CHECKSUM: 29661ccb6961d9fa84a230256913b88059c98450
 

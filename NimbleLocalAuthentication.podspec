@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name = 'NimbleLocalAuthentication'
-  s.version = '0.1.0'
+  s.version = '1.0.0'
   s.summary = 'A SDK support local authentication.'
   s.homepage = 'https://github.com/nimblehq/local-authentication-ios'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
