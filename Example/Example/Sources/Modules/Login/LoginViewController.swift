@@ -143,7 +143,7 @@ extension LoginViewController: LoginViewInput {
     loginButton.setTitleColor(.black, for: .normal)
     loginButton.layer.cornerRadius = 12.0
     loginButton.clipsToBounds = true
-    loginButton.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
+    loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
 
     if let output = output {
       let biometricImageName = output.biometricImageName
@@ -153,14 +153,14 @@ extension LoginViewController: LoginViewInput {
       biometricButton.isHidden = !output.isBiometricAvailable
     }
 
-    biometricButton.addTarget(self, action: #selector(biometricButtonDidTap), for: .touchUpInside)
+    biometricButton.addTarget(self, action: #selector(didTapBiometric), for: .touchUpInside)
   }
 
-  @objc private func biometricButtonDidTap(_ sender: UIButton) {
+  @objc private func didTapBiometric(_ sender: UIButton) {
     output?.selectBiometric()
   }
 
-  @objc private func loginButtonDidTap(_ sender: UIButton) {
+  @objc private func didTapLogin(_ sender: UIButton) {
     output?.logIn()
   }
 }

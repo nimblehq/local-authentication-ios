@@ -12,9 +12,9 @@ final class HomeModule {
   let router: HomeRouter
 
   init() {
-    view = HomeViewController()
     router = HomeRouter()
     viewModel = HomeViewModel(router: router)
+    view = HomeViewController()
     view.output = viewModel
     viewModel.view = view
     router.view = view
