@@ -7,10 +7,16 @@
 
 import LocalAuthentication
 
+/// The protocol used to define the specifications necessary for the SDK.
 public protocol BiometryService: AnyObject {
 
+  /// A boolean value stating whether the biometric feature is enabled.
   var isEnabled: Bool { get set }
+
+  /// A boolean value stating whether the biometric feature is available.
   var isAvailable: Bool { get }
+
+  /// A enum value stating
   var supportedType: BiometryType { get }
   var localizedFallbackTitle: String? { get set }
   var localizedCancelTitle: String? { get set }

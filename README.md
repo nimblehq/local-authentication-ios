@@ -6,14 +6,14 @@
 
 # NimbleLocalAuthentication 1.0.0
 
-![build](https://github.com/nimblehq/local-authentication-ios/workflows/Tests/badge.svg?branch=develop)
+![Tests](https://github.com/nimblehq/local-authentication-ios/workflows/Tests/badge.svg?branch=develop)
 
 The basic idea of NimbleLocalAuthentication is that we want to wrap the LocalAuthentication framework. Developer can easily authenticate users biometrically or with a passphrase.
 
 Some awesome features of NimbleLocalAuthentication:
 
 - Support enable or disable the biometric feature on the application.
-- Easy to localized strings with biometric screens.
+- Easy to localized strings on biometric screens.
 
 You can check out more about the SDK in the document [WIP]
 
