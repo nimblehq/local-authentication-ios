@@ -156,11 +156,11 @@ extension LoginViewController: LoginViewInput {
     biometricButton.addTarget(self, action: #selector(didTapBiometric), for: .touchUpInside)
   }
 
-  @objc private func didTapBiometric(_ sender: UIButton) {
+  @objc private func didTapBiometric() {
     output?.selectBiometric()
   }
 
-  @objc private func didTapLogin(_ sender: UIButton) {
+  @objc private func didTapLogin() {
     output?.logIn()
   }
 }
