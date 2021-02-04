@@ -9,11 +9,11 @@ import LocalAuthentication
 
 public final class NimbleLocalAuthenticatior {
 
-  private var context: LAContext
+  private let context: LAContext = LAContext()
   private let policy: LAPolicy = .deviceOwnerAuthentication
+  private let keychain: KeychainProtocol = Keychain.shared
 
-  public init(context: LAContext = LAContext()) {
-    self.context = context
+  public init() {
     context.canEvaluatePolicy(policy, error: nil)
   }
 }
@@ -21,6 +21,11 @@ public final class NimbleLocalAuthenticatior {
 // MARK: - BiometryService
 
 extension NimbleLocalAuthenticatior: BiometryService {
+
+  public var isEnabled: Bool {
+    get { return keychain[bool: .biometricEnabled] ?? false }
+    set { keychain[bool: .biometricEnabled] = newValue }
+  }
 
   public var isAvailable: Bool {
     context.canEvaluatePolicy(policy, error: .none)
@@ -118,5 +123,4 @@ extension NimbleLocalAuthenticatior {
       return .failed
     }
   }
-
 }

@@ -7,14 +7,15 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'NimbleLocalAuthentication'
-  s.version          = '0.1.0'
-  s.summary          = 'A SDK support local authentication.'
-  s.homepage         = 'https://github.com/nimblehq/local-authentication-ios'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { '@nimblehq' => 'su.v@nimblehq.co' }
-  s.source           = { :git => 'https://github.com/nimblehq/local-authentication-ios.git', :tag => s.version.to_s }
+  s.name = 'NimbleLocalAuthentication'
+  s.version = '1.0.0'
+  s.summary = 'A SDK support local authentication.'
+  s.homepage = 'https://github.com/nimblehq/local-authentication-ios'
+  s.license = { :type => 'MIT', :file => 'LICENSE' }
+  s.author = { '@nimblehq' => 'su.v@nimblehq.co' }
+  s.source = { :git => 'https://github.com/nimblehq/local-authentication-ios.git', :tag => s.version.to_s }
   s.ios.deployment_target = '11.0'
   s.source_files = 'Sources/Classes/**/*'
-   s.frameworks = 'LocalAuthentication'
+  s.framework = 'LocalAuthentication'
+  s.dependency 'KeychainAccess'
 end

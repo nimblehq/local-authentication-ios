@@ -15,11 +15,13 @@ jobs:
       uses: actions/checkout@v1
     - name: Set up Ruby
       uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.6'
     - name: Install RubyGems
       run: gem install bundler
       working-directory: ./Example
     - name: Bundle install
-      run: bundle install --jobs 4 --retry 3
+      run: bundle install
       working-directory: ./Example
     - name: Install Cocoapods
       run: bundle exec pod install --repo-update

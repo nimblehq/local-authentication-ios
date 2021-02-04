@@ -11,6 +11,7 @@ protocol LoginViewInput: AnyObject {
 
   func configure()
   func showMessage(_ message: String)
+  func setBiometricButtonHidden(_ isHidden: Bool)
 }
 
 protocol LoginViewOuput: AnyObject {
@@ -20,6 +21,7 @@ protocol LoginViewOuput: AnyObject {
 
   func viewDidLoad()
   func selectBiometric()
+  func logIn()
 }
 
 final class LoginViewController: UIViewController {
@@ -55,6 +57,10 @@ extension LoginViewController: LoginViewInput {
     let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
     present(alert, animated: true, completion: nil)
+  }
+
+  func setBiometricButtonHidden(_ isHidden: Bool) {
+    biometricButton.isHidden = isHidden
   }
 
   private func setUpLayouts() {
@@ -137,6 +143,7 @@ extension LoginViewController: LoginViewInput {
     loginButton.setTitleColor(.black, for: .normal)
     loginButton.layer.cornerRadius = 12.0
     loginButton.clipsToBounds = true
+    loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
 
     if let output = output {
       let biometricImageName = output.biometricImageName
@@ -146,11 +153,15 @@ extension LoginViewController: LoginViewInput {
       biometricButton.isHidden = !output.isBiometricAvailable
     }
 
-    biometricButton.addTarget(self, action: #selector(biometricButtonDidTap), for: .touchUpInside)
+    biometricButton.addTarget(self, action: #selector(didTapBiometric), for: .touchUpInside)
   }
 
-  @objc private func biometricButtonDidTap(_ sender: UIButton) {
+  @objc private func didTapBiometric() {
     output?.selectBiometric()
+  }
+
+  @objc private func didTapLogin() {
+    output?.logIn()
   }
 }
 
