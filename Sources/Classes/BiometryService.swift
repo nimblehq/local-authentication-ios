@@ -25,7 +25,7 @@ public protocol BiometryService: AnyObject {
   /// Cancel button title.
   var localizedCancelTitle: String? { get set }
 
-  /// Allows setting the default localized authentication reason on context.
+  /// Allows setting the default localized authentication reason to show to the user.
   var localizedReason: String { get set }
 
   /// Allows running authentication in non-interactive mode.
