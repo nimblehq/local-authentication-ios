@@ -7,7 +7,7 @@
 
 import LocalAuthentication
 
-/// The protocol used to define the specifications necessary for the SDK.
+/// The protocol used to define the necessary specifications for the SDK.
 public protocol BiometryService: AnyObject {
 
   /// A boolean value stating whether the biometric feature is enabled.
@@ -34,9 +34,9 @@ public protocol BiometryService: AnyObject {
   /// Authenticates the user when using the application.
   ///
   /// @param completion Completeion block that is executed when authentication finishes.
-  ///              success Completion parameter that is success if the authentication has been authenticate successfully.
+  ///              success Completion parameter that is success if the authentication has been excuted successfully.
   ///              failure Completion parameter that is failed if the authentication has been authenticate failed.
-  ///                    contains error information about the authentication failure.
+  ///                    contains error information about the authentication's failure.
   ///
   /// @see BiometryError
   func authenticate(completion: @escaping (BiometryResult) -> Void)

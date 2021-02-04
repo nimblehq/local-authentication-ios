@@ -18,6 +18,6 @@ public enum BiometryError: LocalizedError, Equatable {
   /// Authentication could not start because biometry is not available on the device.
   case notAvailable
 
-  /// Authentication could not start because other reasons.
+  /// Authentication could not start because of other reasons.
   case failed
 }
