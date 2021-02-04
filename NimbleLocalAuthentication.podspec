@@ -16,6 +16,7 @@ Pod::Spec.new do |s|
   s.source = { :git => 'https://github.com/nimblehq/local-authentication-ios.git', :tag => s.version.to_s }
   s.ios.deployment_target = '11.0'
   s.source_files = 'Sources/Classes/**/*'
+  s.swift_version = '5.0'
   s.framework = 'LocalAuthentication'
   s.dependency 'KeychainAccess'
 end
