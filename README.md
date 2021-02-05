@@ -1,29 +1,70 @@
-# NimbleLocalAuthentication
+<p align="center">
+  <img alt="Nimble logo" src="https://assets.nimblehq.co/logo/light/logo-light-text-320.png" />
+</p>
 
-[![CI Status](https://img.shields.io/travis/19943832/NimbleLocalAuthentication.svg?style=flat)](https://travis-ci.org/19943832/NimbleLocalAuthentication)
-[![Version](https://img.shields.io/cocoapods/v/NimbleLocalAuthentication.svg?style=flat)](https://cocoapods.org/pods/NimbleLocalAuthentication)
-[![License](https://img.shields.io/cocoapods/l/NimbleLocalAuthentication.svg?style=flat)](https://cocoapods.org/pods/NimbleLocalAuthentication)
-[![Platform](https://img.shields.io/cocoapods/p/NimbleLocalAuthentication.svg?style=flat)](https://cocoapods.org/pods/NimbleLocalAuthentication)
+---
 
-## Example
+# NimbleLocalAuthentication 1.0.0
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+![Tests](https://github.com/nimblehq/local-authentication-ios/workflows/Tests/badge.svg?branch=develop)
 
-## Requirements
+The basic idea of NimbleLocalAuthentication is that we want to wrap the LocalAuthentication framework. Developer can easily authenticate users biometrically or with a passphrase.
+
+Some awesome features of NimbleLocalAuthentication:
+
+- Support enable or disable the biometric feature on the application.
+- Easy to localized strings on biometric screens.
+
+You can check out more about the SDK in the document [WIP]
+
+## Sample projects
+
+We have a sample project in the repository. To use it, download the repo, run `pod install` in Example folder to download the required libraries and open [Example.xcworkspace](https://github.com/nimblehq/local-authentication-ios/tree/main/Example/Example.xcworkspace).
 
 ## Installation
 
-NimbleLocalAuthentication is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+For `NimbleLocalAuthentication`, use the following entry in your Podfile:
 
-```ruby
-pod 'NimbleLocalAuthentication'
+```rb
+pod 'NimbleLocalAuthentication', '~> 1.0'
 ```
 
-## Author
+Then run `pod install`
 
-19943832, su@nimblehq.co
+## Usage
+
+Using `NimbleLocalAuthentication` is really simple. You can access an API like this:
+
+```swift
+let biometryService: BiometryService = NimbleLocalAuthenticatior()
+
+biometryService.authenticate { [weak self] result in
+  DispatchQueue.main.async {
+    switch result {
+    case .success:
+      // do something after authenticate successfully
+    case .failure(let error):
+      // hackers are trying to authenticate :D
+    }
+  }
+}
+```
 
 ## License
 
-NimbleLocalAuthentication is available under the MIT license. See the LICENSE file for more info.
+This project is Copyright (c) 2014-2021 Nimble. It is free software,
+and may be redistributed under the terms specified in the [LICENSE] file.
+
+[LICENSE]: /LICENSE
+
+## About
+
+![Nimble](https://assets.nimblehq.co/logo/dark/logo-dark-text-160.png)
+
+This project is maintained and funded by Nimble.
+
+We love open source and do our part in sharing our work with the community!
+See [our other projects][community] or [hire our team][hire] to help build your product.
+
+[community]: https://github.com/nimblehq
+[hire]: https://nimblehq.co/
