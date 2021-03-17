@@ -1,0 +1,47 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/su/me/repos/github/local-authentication-ios/Sources/Classes/NimbleLocalAuthenticator.swift",
+      "line": 10,
+      "symbol": "NimbleLocalAuthenticator",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/su/me/repos/github/local-authentication-ios/Sources/Classes/NimbleLocalAuthenticator.swift",
+      "line": 16,
+      "symbol": "NimbleLocalAuthenticator.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/su/me/repos/github/local-authentication-ios/Sources/Classes/NimbleLocalAuthenticator.swift",
+      "line": 23,
+      "symbol": "NimbleLocalAuthenticator",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/su/me/repos/github/local-authentication-ios/Sources/Classes/Typealias.swift",
+      "line": 10,
+      "symbol": "BiometryType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/su/me/repos/github/local-authentication-ios/Sources/Classes/Typealias.swift",
+      "line": 11,
+      "symbol": "BiometryResult",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/su/me/repos/github/local-authentication-ios/Sources/Classes/Typealias.swift",
+      "line": 12,
+      "symbol": "CredentialType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/su/me/repos/github/local-authentication-ios/Example"
+}
