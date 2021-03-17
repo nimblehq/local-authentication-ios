@@ -17,7 +17,7 @@ final class HomeViewModel {
 
   init(
     router: HomeRouter,
-    biometryService: BiometryService = NimbleLocalAuthenticatior()
+    biometryService: BiometryService = NimbleLocalAuthenticator()
   ) {
     self.router = router
     self.biometryService = biometryService
