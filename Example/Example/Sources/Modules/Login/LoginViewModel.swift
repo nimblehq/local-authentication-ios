@@ -17,7 +17,7 @@ final class LoginViewModel {
 
   init(
     router: LoginRouter,
-    biometryService: BiometryService = NimbleLocalAuthenticatior()
+    biometryService: BiometryService = NimbleLocalAuthenticator()
   ) {
     self.router = router
     self.biometryService = biometryService

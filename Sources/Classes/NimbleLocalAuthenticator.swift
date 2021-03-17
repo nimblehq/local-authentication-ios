@@ -1,5 +1,5 @@
 //
-//  NimbleLocalAuthenticatior.swift
+//  NimbleLocalAuthenticator.swift
 //  NimbleLocalAuthentication
 //
 //  Created by Su Van Ho on 15/1/21.
@@ -7,7 +7,7 @@
 
 import LocalAuthentication
 
-public final class NimbleLocalAuthenticatior {
+public final class NimbleLocalAuthenticator {
 
   private let context: LAContext = LAContext()
   private let policy: LAPolicy = .deviceOwnerAuthentication
@@ -20,7 +20,7 @@ public final class NimbleLocalAuthenticatior {
 
 // MARK: - BiometryService
 
-extension NimbleLocalAuthenticatior: BiometryService {
+extension NimbleLocalAuthenticator: BiometryService {
 
   public var isEnabled: Bool {
     get { return keychain[bool: .biometricEnabled] ?? false }
@@ -95,7 +95,7 @@ extension NimbleLocalAuthenticatior: BiometryService {
 
 // MARK: - Private
 
-extension NimbleLocalAuthenticatior {
+extension NimbleLocalAuthenticator {
 
   private func handleEvaluation(
     isSuccess: Bool,
